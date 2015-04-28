@@ -1,0 +1,88 @@
+/**
+ * Form section
+ *
+ * Fill the form and get your key
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Style ***************************************/
+
+.s-form {
+	background-image: linear-gradient(135deg, ($clr-bright - $clr-cntrst) 0%, $clr-bright 50%, $clr-bright);
+}
+
+form, fieldset {
+	max-width: $mq-medium-min;
+	margin: auto;
+	border: none;
+}
+
+.field {
+	border-radius: $border-radius;
+	overflow: hidden;
+
+	input  {
+		display: inline-block;
+		width: 100%;
+		border: none;
+		padding: $border-width;
+
+		vertical-align: top;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1em;
+		line-height: 1em;
+		outline: none;
+
+		color: $clr-bright;
+		border-radius: 2px;
+		background-color: $clr-dark;
+		box-sizing: border-box;
+	}
+}
+
+.field-checkbox {
+	margin-bottom: $border-width;
+
+	input {
+		float: left;
+	}
+	p {
+		margin-left: 24px;
+		font-size: 0.75em;
+		font-style: italic;
+	}
+	label {
+		cursor: pointer;
+	}
+}
+
+.field-submit {
+	button {
+		float: right;
+		margin-left: 1em;
+	}
+	p {
+		padding: $border-width 0;
+		font-family: 'Montserrat', sans-serif;
+
+		&.error {
+			color: $clr-red;
+		}
+		&.success {
+			color: $clr-blue;
+		}
+	}
+}
+
+.l-form-head {
+	margin-bottom: $border-width;
+}
+
+.letter-to-devs {
+	color: $clr-dark + (3 * $clr-cntrst);
+	font-style: italic;
+}

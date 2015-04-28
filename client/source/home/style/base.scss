@@ -1,0 +1,209 @@
+/**
+ * Main styles of the remote app
+ *
+ * Main styling
+ *
+ * Letter index:
+ * s   section
+ * g   graphics
+ * l   link
+ *
+ * Issues:
+ *
+ * Font on Safari iOS
+ * Split screen size
+ *
+ * 0 - 320
+ * 321 - 480
+ * 481 - 768
+ * 769 - 1280
+ * 1281 - 1600
+ * 1601 - infinite (+2)
+ */
+
+
+/* Variables ***********************************/
+
+@import 'variables/common';
+
+/* Font ****************************************/
+
+@font-face {
+	font-family: 'Montserrat';
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0;
+	src: url('/assets/fonts/Montserrat/Montserrat-Bold.ttf');
+	src: url('/assets/fonts/Montserrat/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
+		url('/assets/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
+		url('/assets/fonts/Montserrat/Montserrat-Bold.svg#Montserrat-regular') format('svg');
+}
+
+/* Styles **************************************/
+/* Base style */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-bottom: $border-width;
+}
+
+p {
+	line-height: 1.3em;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a, a:link, a:visited, a:hover {
+	color: inherit;
+}
+
+svg * {
+	stroke: $clr-bright;
+	fill: none;
+}
+
+hr {
+	margin: $border-width 0;
+	border: 1px solid $clr-bright - (3 * $clr-cntrst);
+}
+
+/* Common components ***************************/
+
+.blank {
+	width: 100%;
+	height: 100%;
+}
+
+.clear {
+	clear: both;
+}
+
+.section-wrap {
+	padding: $border-width * 1.5;
+	max-width: $content-width-max;
+	margin: auto;
+}
+
+.on-the-right {
+	text-align: right;
+}
+
+.on-the-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.bottomline {
+	font-style: italic;
+	font-size: 0.6125em;
+	text-align: right;
+}
+
+.button, .link {
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+}
+
+.button {
+	display: inline-block;
+	padding: $border-width;
+	border: none;
+	border-radius: $border-radius;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+}
+
+.button-bright, a.button-bright {
+	color: $clr-dark;
+	background-image: linear-gradient(135deg, $clr-bright 0%, ($clr-bright + $clr-cntrst) 40%, ($clr-bright + $clr-cntrst));
+	cursor: pointer;
+}
+.button-dark, a.button-dark {
+	color: $clr-bright;
+	background-image: linear-gradient(135deg, $clr-dark 0%, ($clr-dark - $clr-cntrst) 40%, ($clr-dark - $clr-cntrst));
+	cursor: pointer;
+}
+
+.warning-block {
+	background: rgba(255,255,255,0.15);
+	padding: 1em;
+	border-radius: 0.5em;
+}
+
+.doge {
+  position: absolute;
+  font-family: 'Comic Sans MS', fantasy;
+}
+
+/* Media queries *******************************/
+
+@media (min-width: $mq-medium-min) {
+	hr {
+		margin: ($border-width * 2) 0;
+	}
+	.section-wrap {
+		padding: $border-width * 3;
+	}
+	.show-for-small-only {
+		display: none
+	}
+}
+
+@media (min-width: $mq-xlarge-min) {
+
+	$margin-gap: 2%;
+	$step-width: (100% - $margin-gap * 11) / 12;
+
+	@for $i from 1 through 12 {
+		.b-#{$i} {
+			display: inline-block;
+			width: ($step-width * $i) + ($margin-gap * ($i - 1));
+			margin-right: $margin-gap;
+			&:last-child {margin-right: 0;}
+		}
+		.b-#{$i}-offset {
+			margin-left: ($step-width + $margin-gap) * $i;
+		}
+	}
+
+	.b-top {
+		vertical-align: top;
+	}
+	.b-centered {
+		vertical-align: middle;
+	}
+	.b-bottom {
+		vertical-align: bottom;
+	}
+}
+
+@media (min-width: $mq-xlarge-min)  {
+	body {
+		font-size: 1.25em;
+	}
+	.section-wrap {
+		padding: ($border-width * 6) ($border-width * 3);
+	}
+}

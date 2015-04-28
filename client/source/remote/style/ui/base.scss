@@ -1,0 +1,69 @@
+/**
+ * Main styles of the remote app
+ *
+ * Reseting, mainly reseting
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Font ****************************************/
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/assets/fonts/Montserrat/Montserrat-Regular.eot');
+	src: url('/assets/fonts/Montserrat/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+		url('/assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
+		url('/assets/fonts/Montserrat/Montserrat-Regular.svg#Montserrat-regular') format('svg');
+}
+
+/* Styles **************************************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%; width: 100%;
+	background-color: $clr-dark;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+}
+
+.blank {
+	width: 100%;
+	height: 100%;
+}
+
+/**
+ * UI switcher **********************************
+ * Setup ng-animation
+ * ng-enter is left as comment, it's not
+ * used here at the moment.
+ */
+#ui {
+	position: relative;
+}
+
+.ng-animation {
+	position: absolute;
+}
+
+.ng-animation.ng-leave {
+  -webkit-transition: all linear .4s;
+  -moz-transition: all linear .4s;
+  -o-transition: all linear .4s;
+  transition: all linear .4s;
+
+  @include make-it-layout();
+}
+
+.ng-animation.ng-leave {
+  opacity: 1;
+}
+.ng-animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}

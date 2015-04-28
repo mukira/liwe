@@ -1,0 +1,127 @@
+/**
+ * Promptr
+ *
+ * all the styling for the promptr
+ * let's keep it simple
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+$step-duration: 0.4s;
+$step-delai: $step-duration + 0.1s;
+$font-size-standard: 1rem;
+$font-size-fullscreen: 2.5rem;
+
+/* Styles **************************************/
+#promptr {
+	position: fixed;
+	left: 0; bottom: -10%;
+	width: 90%; min-height: 0;
+	margin: 0 5%;
+
+	background-color: $clr-dark;
+	border-top: 1px solid $clr-bright;
+	color: $clr-bright;
+
+	z-index: 5;
+
+	@include box-sizing(border-box);
+
+	transition:
+		min-height $step-duration ease $step-delai,
+		border-color $step-duration ease,
+		bottom $step-duration ease $step-delai;
+
+	p {
+		max-height: 2.25rem;
+		margin: 5% 0 6%;
+
+		font-size: $font-size-standard;
+		line-height: $font-size-standard;
+		text-align: center;
+    vertical-align: middle;
+
+		transition:
+			all $step-duration ease,
+			font-size $step-duration ease $step-delai,
+			line-height $step-duration ease $step-delai;
+	}
+
+	.grip {
+		width: 40px;
+		height: 10px;
+		margin: 8px auto 2px;
+		border-radius: 5px;
+		background-color: $clr-bright;
+	}
+
+	/* Types *****************/
+	&.closed, &.hidden {
+		bottom: 0;
+		border-color: $clr-dark;
+		p {
+			max-height: 0;
+			margin: 0;
+		}
+		.grip {
+			margin: 5px auto;
+		}
+	}
+
+	&.standard {
+		bottom: 0;
+	}
+
+	&.hidden {
+		opacity: 0;
+	}
+}
+
+#promptr-end {
+	position: fixed;
+	top: 0; left: -100%;
+	width: 100%; height: 100%;
+
+	background-color: $clr-dark;
+	color: $clr-bright;
+	z-index: 5;
+
+	transition: all ($step-duration * 1.5) ease-out;
+
+	p {
+		position: relative;
+		top: -50px;
+		margin: 6% 5%;
+		font-size: $font-size-fullscreen;
+		line-height: $font-size-fullscreen;
+		letter-spacing: -0.06125em;
+    opacity: 0;
+
+    transition: all $step-duration ease ($step-duration * 2);
+	}
+
+	svg {
+		display: block; 
+		width: 50px; height: 51px;
+		margin-left: 5%;
+		fill: $clr-dark;
+
+		transition: all $step-duration ease ($step-duration * 3.25);
+	}
+
+	/* Types *****************/
+	&.enabled {
+		left: 0;
+
+		p {
+			top: 0;
+			opacity: 1;
+		}
+		svg {
+			fill: $clr-bright;
+		}
+	}
+}

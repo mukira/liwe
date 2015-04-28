@@ -1,0 +1,42 @@
+/**
+ * Contribute section
+ *
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Style ***************************************/
+
+.s-contribute {
+  color: $clr-bright;
+  background-image: url('../assets/svg/capability.svg');
+  background-color: $clr-dark;
+  background-position: top left;
+  background-size: 100px;
+}
+
+.g-contribute {
+  width: 100%;
+  max-height: 100px;
+  margin: 20px 0;
+
+  & .logo-content {
+    stroke: #3fa652;
+  }
+}
+
+/* Media queries *******************************/
+
+@media (min-width: $mq-xlarge-min) {
+  .g-contribute {
+    max-height: 250px;
+    margin: 0;
+  }
+
+  .s-contribute {
+    background-size: 200px;
+  }
+}

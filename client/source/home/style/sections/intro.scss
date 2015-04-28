@@ -1,0 +1,124 @@
+/**
+ * Intro section style
+ *
+ * Simple and basic
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Style ***************************************/
+
+.s-intro {
+	color: $clr-dark;
+	background-image: linear-gradient(135deg, ($clr-bright - $clr-cntrst) 0%, $clr-bright 50%, $clr-bright);
+}
+
+.g-intro {
+	width: 100%;
+	height: 170px;
+
+	* {
+		stroke: $clr-dark;
+	}
+
+	.g-intro-item {
+		transform: scale(0.5);
+		transform-origin: 50%;
+		animation: gIntroItem 6s ease infinite;
+		-webkit-animation: gIntroItem 6s ease infinite;
+		-moz-transform: none;
+		-moz-animation: none;
+	}
+
+	.g-intro-touch1 {
+		animation: gIntroTouchOne 6s ease infinite;
+		-webkit-animation: gIntroTouchOne 6s ease infinite;
+		-moz-animation: none;
+	}
+
+	.g-intro-touch2 {
+		animation: gIntroTouchTwo 6s ease infinite;
+		-webkit-animation: gIntroTouchTwo 6s ease infinite;
+		-moz-animation: none;
+	}
+
+	.g-intro-link * {
+	  stroke-dasharray: 10;
+	  animation: gIntroLink 5s linear infinite;
+	  -webkit-animation: gIntroLink 5s linear infinite;
+		-moz-animation: none;
+	}
+}
+
+/* Media queries *******************************/
+
+@media (max-width: $mq-large-max) {
+	.g-intro {
+		margin-top: $border-width;
+	}
+}
+
+@media (min-width: $mq-xlarge-min) {
+	.s-intro .content {
+		text-align: right;
+	}
+
+	.g-intro {
+		height: 210px;
+	}
+}
+
+/* Animations **********************************/
+
+@keyframes gIntroLink {
+  to {stroke-dashoffset: 100;}
+}
+
+@keyframes gIntroItem {
+	20% {transform: scale(0.5) rotate(0);}
+	30% {transform: scale(1.2) rotate(-40deg);}
+	70% {transform: scale(1.2) rotate(-40deg);}
+	80% {transform: scale(0.5) rotate(0);}
+}
+
+@keyframes gIntroTouchOne {
+	20% {transform: translate(0, 0);}
+	30% {transform: translate(-15px, -20px);}
+	70% {transform: translate(-15px, -20px);}
+	80% {transform: translate(0, 0);}
+}
+
+@keyframes gIntroTouchTwo {
+	20% {transform: translate(0, 0);}
+	30% {transform: translate(15px, 20px);}
+	70% {transform: translate(15px, 20px);}
+	80% {transform: translate(0, 0);}
+}
+
+@-webkit-keyframes gIntroLink {
+  to {stroke-dashoffset: 100;}
+}
+
+@-webkit-keyframes gIntroItem {
+	20% {transform: scale(0.5) rotate(0);}
+	30% {transform: scale(1.2) rotate(-40deg);}
+	70% {transform: scale(1.2) rotate(-40deg);}
+	80% {transform: scale(0.5) rotate(0);}
+}
+
+@-webkit-keyframes gIntroTouchOne {
+	20% {transform: translate(0, 0);}
+	30% {transform: translate(-15px, -20px);}
+	70% {transform: translate(-15px, -20px);}
+	80% {transform: translate(0, 0);}
+}
+
+@-webkit-keyframes gIntroTouchTwo {
+	20% {transform: translate(0, 0);}
+	30% {transform: translate(15px, 20px);}
+	70% {transform: translate(15px, 20px);}
+	80% {transform: translate(0, 0);}
+}

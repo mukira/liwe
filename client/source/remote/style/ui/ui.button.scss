@@ -1,0 +1,93 @@
+/**
+ * UI:Button
+ *
+ * all the styling for the UI button
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Styles **************************************/
+
+.button {
+	width: 100%; height: 100%;
+	border-radius: 50%;
+	border: $border-width solid $clr-bright;
+	padding: $border-width;
+	background-color: $clr-dark;
+
+	box-sizing: border-box;
+	@include selectable(none);
+	vertical-align: middle;
+
+	transition: padding $animation-duration/2 $transition-timing-function;
+
+	animation: buttonIn $animation-duration $transition-timing-function;
+	-webkit-animation: buttonIn $animation-duration $transition-timing-function;
+
+	div {
+		width: 100%; height: 100%;
+		padding: $border-width * 2;
+		border-radius: 50%;
+		background-color: $clr-bright;
+
+		box-sizing: border-box;
+		@include selectable(none);
+
+		animation: buttonIn $animation-duration*1.25 $transition-timing-function;
+	  -webkit-animation: buttonIn $animation-duration*1.25 $transition-timing-function;
+
+		div {
+			width: 100%; height: 100%;
+			margin: 0; padding: 0;
+			border-radius: 50%;
+			background-color: $clr-dark;
+
+			box-sizing: border-box;
+
+			@include selectable(none);
+			transition: all $animation-duration/2 $transition-timing-function;
+
+			animation: buttonIn $animation-duration $transition-timing-function $animation-duration/2;
+	  	-webkit-animation: buttonIn $animation-duration $transition-timing-function $animation-duration/2;
+		}
+	}
+}
+
+.button.press {
+	transition-duration: 0s;
+	padding: $border-width * 3;
+
+	div {
+		transition-duration: 0s;
+		
+		div {
+			width: 0; height: 0;
+			margin: 50%;
+			transition-duration: 0s;
+		}
+	}
+}
+
+
+/* Animations **********************************/
+
+@keyframes buttonIn
+{
+	0% {
+		width: 0; height: 0;
+		margin: 50%; padding: 0;
+		border-width: 0;
+	}
+}
+
+@-webkit-keyframes buttonIn
+{
+	0% {
+		width: 0; height: 0;
+		margin: 50%; padding: 0;
+		border-width: 0;
+	}
+}

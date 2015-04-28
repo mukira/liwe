@@ -1,0 +1,14 @@
+/**
+ * Variables
+ * general stuff
+ *
+ */
+
+
+// Transition timing function
+$transition-tf-high: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$transition-tf-basic: cubic-bezier(0.68, 0, 0.265, 1);
+
+$border-width: 16px;
+$transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$animation-duration: 0.8s;

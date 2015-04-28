@@ -1,0 +1,160 @@
+/**
+ * UI:Gyro
+ *
+ * all the styling for the UI gyro
+ * mainly related to THE button
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+$intro-duration: .6s;
+$anim-duration: 10s;
+$anim-delai: .1s;
+$atom-circle-width: 6px;
+
+/* Styles **************************************/
+div.gyro-container {
+	border-radius: 50%;
+	border: $border-width solid $clr-bright;
+	padding: $border-width;
+	background-color: $clr-dark;
+
+	box-sizing: border-box;
+
+	animation: gyroCtnrIn $intro-duration;
+	-webkit-animation: gyroCtnrIn $intro-duration;
+}
+
+div.gyro-logo {
+	position: relative;
+	width: 100%; height: 100%;
+	border: $border-width solid $clr-bright;
+	box-sizing: border-box;
+
+	border-radius: 50%;
+	background-color: $clr-bright;
+
+	opacity: 1;
+
+	animation: gyroIn ($intro-duration * 2) ease;
+	-webkit-animation: gyroIn ($intro-duration * 2) ease;
+
+	div {
+		width: 100%;
+		border-radius: 50%;
+		position: absolute;
+		border-style: solid;
+		border-width: $atom-circle-width;
+		box-sizing: border-box;
+	}
+	div.alpha {
+		height: 100%;
+		border-color: $clr-dark;
+		animation: gyroRotateAlpha $anim-duration linear 0 infinite;
+		-webkit-animation: gyroRotateAlpha $anim-duration linear 0 infinite;
+	}
+	div.beta {
+		height: 60%;
+		top: 20%;
+		border-color: $clr-dark;
+		animation: gyroRotateBeta $anim-duration linear $anim-delai infinite;
+		-webkit-animation: gyroRotateBeta $anim-duration linear $anim-delai infinite;
+		@include rotate(30deg);
+	}
+	div.gamma {
+		height: 40%;
+		top: 30%;
+		border-color: $clr-dark;
+		animation: gyroRotateGamma $anim-duration linear $anim-delai*2 infinite;
+		-webkit-animation: gyroRotateGamma $anim-duration linear $anim-delai*2 infinite;
+		@include rotate(120deg);
+	}
+	div.center {
+		width: 0; height: 0;
+		top: 50%; left: 50%;
+		margin-top: -$atom-circle-width;
+		margin-left: -$atom-circle-width;
+		border-color: $clr-dark;
+	}
+}
+
+
+/* Animations **********************************/
+
+@keyframes gyroCtnrIn
+{
+	from { border-width: 0; }
+}
+@-webkit-keyframes gyroCtnrIn
+{
+	from { border-width: 0; }
+}
+
+@keyframes gyroIn
+{
+	0% { width: 0; height: 0; margin: 50%; border-width: 0; opacity: 0; }
+	50% { width: 0; height: 0; margin: 50%; border-width: 0; opacity: 0; }
+}
+@-webkit-keyframes gyroIn
+{
+	0% { width: 0; height: 0; margin: 50%; border-width: 0; opacity: 0; }
+	50% { width: 0; height: 0; margin: 50%; border-width: 0; opacity: 0; }
+}
+
+@keyframes gyroRotateAlpha
+{
+	0%  { @include rotate(0deg); height: 100%; top: 0; }
+	4%  { @include rotate(90deg); }
+	8%  { @include rotate(180deg); height: 70%; top: 15%; }
+	12% { @include rotate(270deg); }
+	16% { @include rotate(360deg); height: 100%; top: 0; }
+	100% { @include rotate(360deg); height: 100%; top: 0; }
+}
+@-webkit-keyframes gyroRotateAlpha
+{
+	0%  { @include rotate(0deg); height: 100%; top: 0; }
+	4%  { @include rotate(90deg); }
+	8%  { @include rotate(180deg); height: 70%; top: 15%; }
+	12% { @include rotate(270deg); }
+	16% { @include rotate(360deg); height: 100%; top: 0; }
+	100% { @include rotate(360deg); height: 100%; top: 0; }
+}
+
+@keyframes gyroRotateBeta
+{
+	0%  { height: 60%; top: 20%; }
+	4%  { height: 100%; top: 0; }
+	12% { height: 0; top: 50%; }
+	16% { height: 60%; top: 20%; }
+	100% { height: 60%; top: 20%; }
+}
+@-webkit-keyframes gyroRotateBeta
+{
+	0%  { height: 60%; top: 20%; }
+	4%  { height: 100%; top: 0; }
+	12% { height: 0; top: 50%; }
+	16% { height: 60%; top: 20%; }
+	100% { height: 60%; top: 20%; }
+}
+
+@keyframes gyroRotateGamma
+{
+	0%  { @include rotate(480deg); }
+	4%  { @include rotate(390deg); }
+	8%  { @include rotate(300deg); }
+	12% { @include rotate(210deg); }
+	16% { @include rotate(120deg); }
+	100% { @include rotate(120deg); }
+}
+@-webkit-keyframes gyroRotateGamma
+{
+	0%  { @include rotate(480deg); }
+	4%  { @include rotate(390deg); }
+	8%  { @include rotate(300deg); }
+	12% { @include rotate(210deg); }
+	16% { @include rotate(120deg); }
+	100% { @include rotate(120deg); }
+}

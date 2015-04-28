@@ -1,0 +1,49 @@
+/**
+ * Common mixins
+ * Instructions apply
+ * 
+ */
+
+
+@mixin rotate($radius) {
+	transform:rotate($radius);
+	-ms-transform:rotate($radius);
+	-webkit-transform:rotate($radius);
+}
+
+@mixin make-it-layout() {
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
+}
+
+@mixin selectable($val) {
+	-webkit-touch-callout: $val;
+	-webkit-user-select: $val;
+	-khtml-user-select: $val;
+	-moz-user-select: $val;
+	-ms-user-select: $val;
+	user-select: $val;
+
+	outline: none;
+}
+
+@mixin transition($rules) {
+	transition: $rules;
+	-webkit-transition: $rules;
+}
+
+@mixin box-sizing($value) {
+	box-sizing: $value;
+	-moz-box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin gradient($colorStart, $colorEnd) {
+	background: -webkit-linear-gradient(left top, $colorStart, $colorEnd);
+  background: -o-linear-gradient(bottom right, $colorStart, $colorEnd);
+  background: -moz-linear-gradient(bottom right, $colorStart, $colorEnd);
+  background: linear-gradient(to bottom right, $colorStart, $colorEnd);
+}

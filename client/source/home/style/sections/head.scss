@@ -1,0 +1,94 @@
+/**
+ * Main styles of the remote app
+ *
+ * Reseting, mainly reseting
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Style ***************************************/
+
+.s-header {
+  // height: 90vh;
+  min-height: 300px;
+  padding: $border-width;
+  background-image: url('../assets/images/bgr-head_480.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: $clr-dark;
+  color: $clr-bright;
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    max-width: 80%;
+    font-size: 3em;
+    line-height: 1em;
+  }
+
+  .section-wrap {
+    position: relative;
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.g-logo {
+  width: 100px; height: 52px;
+}
+
+.g-logo path {
+  fill: $clr-bright;
+  stroke: none;
+}
+
+.g-head-arrow {
+  position: absolute;
+  display: none;
+  left: 0;
+  bottom: 6px;
+  height: 18px;
+  z-index: 10;
+}
+
+/* Media queries *******************************/
+@media (min-width: $mq-medium-min) and (max-width: $mq-large-max) {
+  .s-header {
+    background-image: url('../assets/images/bgr-head_1024.jpg'); 
+    h1 {max-width: 360px; font-size: 3.5em;}
+  }
+}
+
+@media (min-width: $mq-medium-min) and (max-width: $mq-medium-max) {
+  .g-head-arrow {display: block; width: 30px;}
+}
+
+@media (min-width: $mq-large-min) {
+  .g-head-arrow {display: block; width: 100%;}
+}
+
+@media (min-width: $mq-xlarge-min) {
+  .s-header {
+    background-attachment: fixed;
+    h1 {max-width: $mq-medium-min; font-size: 4em;}
+  }
+  .g-logo {width: 140px; height: 73px;}
+}
+
+@media (min-width: $mq-xlarge-min) and (max-width: $mq-xxlarge-max) {
+  .s-header {
+    background-image: url('../assets/images/bgr-head_1600.jpg'); 
+    min-height: 500px;
+  }
+}
+
+@media (min-width: $mq-xxlarge-max) {
+  .s-header {
+    min-height: 600px;
+  }
+}

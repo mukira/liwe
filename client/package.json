@@ -1,0 +1,23 @@
+{
+  "name": "liwe-client",
+  "description": "Use smartphone as remote for webapps",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git"
+  },
+  "author": "maxwellito",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.5",
+    "gulp-concat": "^2.2.0",
+    "gulp-file-insert": "^1.0.2",
+    "gulp-jshint": "^1.6.3",
+    "gulp-replace": "^0.4.0",
+    "gulp-sass": "^0.7.2",
+    "gulp-uglify": "^0.3.1",
+    "gulp-util": "^2.2.19"
+  },
+  "engines": {
+    "node": ">=0.10.22"
+  }
+}

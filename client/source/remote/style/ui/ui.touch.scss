@@ -1,0 +1,54 @@
+/**
+ * UI:Gyro
+ *
+ * all the styling for the UI gyro
+ * mainly related to THE button
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Styles **************************************/
+.ui-touch {
+  position: relative;
+  overflow: hidden;
+	@include selectable(none);
+  
+	.point {
+		position: absolute;
+		@include selectable(none);
+
+		.visual {
+			border-radius: 50%;
+			@include selectable(none);
+			
+			width: 64px; height: 64px;
+			padding: 8px;
+			border: 0 solid $clr-bright;
+
+			box-sizing: border-box;
+
+			div {
+				width: 0; height: 0;
+				margin: 50%;
+
+				transition: all 0.2s $transition-timing-function 0;
+				-webkit-transition: all 0.2s $transition-timing-function 0;
+
+				border-radius: 50%;
+				background-color: $clr-bright;
+			}
+		}
+
+		&.active .visual {
+			border-width: 4px;
+		
+			div {
+				width: 100%; height: 100%;
+				margin: 0;
+			}
+		}
+	}
+}

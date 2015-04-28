@@ -1,0 +1,42 @@
+/**
+ * Credits section
+ *
+ * This is the end
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Style ***************************************/
+
+.s-credits {
+	background-color: #181f21;
+	color: $clr-bright;
+}
+
+.g-credits {
+	width: 100%;
+	height: 60px;
+	margin-top: $border-width * 1.5;
+	margin-bottom: $border-width;
+}
+
+.g-credits * {
+	stroke: #86e0c4;
+}
+
+.l-credits-line {
+	padding: 0 $border-width $border-width;
+}
+
+/* Media queries *******************************/
+
+@media (min-width: $mq-large-min) {
+	.g-credits {
+		height: 80px;
+		margin-top: $border-width * 3;
+		margin-bottom: $border-width * 2;
+	}
+}

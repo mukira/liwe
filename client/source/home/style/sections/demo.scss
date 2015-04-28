@@ -1,0 +1,200 @@
+/**
+ * Demo section
+ *
+ * Simple, just tricky buttons
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Style ***************************************/
+
+.s-demo {
+	color: $clr-bright;
+	background-image: url('../assets/images/bgr-demo_480.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+.l-demo-block {
+	margin-bottom: $border-width;
+}
+
+a.l-demo {
+	display: block;
+	position: relative;
+
+	padding: 10px;
+	border: 4px solid $clr-bright;
+
+	background: none;
+	text-decoration: none;
+	outline: none;
+
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	&:hover {
+		svg * {
+			stroke: $clr-dark;
+		}
+		p {
+			border-color: $clr-dark;
+			color: $clr-dark;
+		}
+	}
+
+	svg {
+		position: absolute;
+		width: 48px;
+		height: 48px;
+		z-index: 2;
+	}
+
+	svg * {
+		@include transition(all 0.3s);
+	}
+
+	p {
+		position: relative;
+		min-height: 64px;
+		margin-left: 58px;
+		border-left: 1px solid $clr-bright;
+		padding-left: 10px;
+		font-size: 0.75em;
+		line-height: 1.5em;
+		z-index: 2;
+		@include transition(all 0.3s);
+	}
+
+	span {
+		display: block;
+		font-size: 1.5em;
+	}
+}
+
+.l-demo:hover:after, .l-demo:active:after {
+	width: 100%;
+}
+.l-demo:after {
+	content: '';
+	position: absolute;
+
+	width: 0%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: $clr-bright;
+
+	z-index: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.l-github {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0gd2lkdGg9IjEwMHB4IiBoZWlnaHQ9IjEwMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0gPHBhdGggZmlsbD0iI2Y5ZjlmOSIgZD0iTTcwLjcwOSwxNS4wMjljMS4xNywyLjY1NywxLjkyOCw3LjA3LDAuNzk3LDEwLjMwMWM0LjYyNSwzLjk0OSw2LjIxNCwxMy41NDksMy45ODIsMjEuMzk0DSBDODIuMDgsNDcuMjI3LDg5LjkzMSw0Ni40ODIsOTUsNDguNTA1Yy00LjczOC0wLjYwOS0xMS4yMDktMS44MDQtMTcuMzItMS4zODhjLTEuMTU4LDAuMDc5LTIuODc0LTAuMDQ0LTIuNzksMS41ODUNIGM3LjA3NSwwLjU1NiwxNC4xMDQsMS4xNiwxOS45MTMsMi45NzNjLTUuNzYxLTAuOTQxLTEyLjc1NC0yLjM3NC0xOS45MTMtMi41NzRjLTIuOTU3LDUuODM1LTguOTA3LDguNzAzLTE3LjEyMiw5LjMwNw0gYzAuODgzLDEuOTIxLDIuNTc0LDIuNjUzLDIuOTg3LDUuNzQ0YzAuNjE2LDQuNjE4LTAuOTY0LDExLjM4MSwwLjU5NSwxNC40NTljMC43NDgsMS40NzUsMS45NjcsMS41MTQsMi43ODksMi43NzUNIGMtMi4wMTIsMi4zODEtNy4wMDEtMC4yNjctNy41NjgtMi43NzVjLTAuOTczLTQuMjk1LDEuNDgyLTEwLjk1NC0xLjE5My0xMy44NjVjMC4xODksNC42ODQtMS4xMDgsMTEuMjY0LDAuMTk5LDE1LjQ0OQ0gYzAuNTE1LDEuNjQ2LDIuMDAyLDIuMjgxLDEuNTkzLDMuNzY1Yy05LjM1MiwwLjk1LTUuNDQ0LTEyLjEwNC02Ljk3Mi0xOS44MDljLTEuNDExLDAuMS0wLjc5MSwyLjExMy0wLjc5NiwyLjk3Mg0gYy0wLjA0LDcuNTI0LDEuNTQsMTcuODQ0LTYuNTcsMTYuODM3Yy0wLjIzNy0xLjU4MSwxLjA4OC0yLjExOSwxLjU5My0zLjU2M2MxLjQ3OS00LjIzNC0wLjI3Ny0xMC41NDIsMC40MDEtMTUuNjUxDSBjLTMuMDk1LDIuMzMzLDAuMzI1LDEwLjQ4LTEuNTkzLDE0LjY1N2MtMS4xMDUsMi40MDQtNC42NjYsMy40NS03LjM2NywyLjM3N2MwLjM1Mi0xLjc5LDIuMi0xLjUwMSwyLjk4NC0zLjE2OQ0gYzEuMDk2LTIuMzI1LDAuMDA4LTUuNjc0LDAuMzk5LTkuMTExYy01LjcyOSwxLjE0My0xMC4xNzMtMC4xNjYtMTIuMzQ4LTMuNzY0Yy0wLjk3My0xLjYxNS0xLjIxNC0zLjUyLTIuMzktNC45NTENIGMtMS4xNy0xLjQzMi0zLjA0LTEuNjI1LTMuNTgyLTMuNTY0YzcuMDk1LTEuNzA4LDcuMzY3LDcuMzAyLDEzLjczOSw3LjUyNWMxLjk1NCwwLjA3MSwyLjk3LTAuNTY0LDQuNzc4LTAuOTg5DSBjMC41MDYtMi4yNzIsMS41ODktMy45NjYsMy4xODYtNS4xNTNjLTcuOTI5LTEuMDg1LTE0LjQ3Ny0zLjU1NC0xNy41MjItOS41MDRjLTcuMjA4LDAuMzU1LTEzLjgwNCwxLjMxNy0xOS45MTMsMi43NzENIGM1LjU0NS0yLjAxNCwxMi4zODQtMi43MzYsMTkuNzE1LTIuOTczYy0wLjQzMi0yLjU5Ni00LjIxOS0xLjg4Mi02LjU3LTEuNzgyQzEzLjk3Myw0Ny4zMSw4LjQ3Myw0Ny44NTMsNSw0OC41MDUNIGM1LjAzNC0xLjc5NSwxMi4wOTgtMS41NzEsMTguOTE4LTEuNTg1Yy0yLjA4Ni02LjU0LTEuMzYzLTE2LjkyOSwzLjE4Ni0yMC43OThjLTEuMjg5LTMuMjQ5LTAuODg5LTguNTYzLDAuNzk2LTExLjA5Mw0gYzUuMDc5LDAuMjI4LDguMTU5LDIuNDQzLDExLjM1LDQuNTU3YzMuOTU3LTEuMTI1LDguMTE4LTEuNjg1LDEzLjU0LTEuMzg3YzIuMjgsMC4xMjYsNC42NTIsMS4xNTEsNi4zNjksMC45ODkNIGMxLjY4NS0wLjE1OCwzLjU0Mi0yLjA0OSw1LjE3OC0yLjc3MUM2Ni40NjgsMTUuNDc2LDY4LjI3MSwxNS4xMTcsNzAuNzA5LDE1LjAyOXoiLz4NIDwvc3ZnPg0=);
+	background-repeat: no-repeat;
+}
+
+/* Media queries *******************************/
+
+@media (max-width: $mq-small-max) {
+  .l-github {
+  	padding: 4px 28px 4px 4px;
+		background-size: 26px;
+		background-repeat: no-repeat;
+		background-position: right center;
+		font-size: 0.75em;
+		font-style: normal;
+		text-decoration: none;
+  }
+  .l-github-wrap {
+  	text-align: right;
+		margin: 6px 0;
+  }
+}
+
+@media (min-width: $mq-medium-min) and (max-width: $mq-large-max) {
+	.s-demo {
+		background-image: url('../assets/images/bgr-demo_1024.jpg');
+	}
+	.l-demo-button-group > div {
+		margin-bottom: $border-width;
+	}
+	.l-demo-wrap {
+	  width: 80%;
+		display: inline-block;
+	}
+	.l-github-wrap{
+		width: 20%;
+		display: inline-block;
+		height: 92px;
+		vertical-align: top;
+	}
+	.l-github {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-size: 60px;
+		background-position: center center;
+		text-indent: -1000000px;
+	}
+}
+
+@media (min-width: $mq-xlarge-min) {
+  .s-demo {
+		background-image: url('../assets/images/bgr-demo_1600.jpg');
+	}
+	.s-demo {
+		background-attachment: fixed;
+	}
+	.l-demo-block {
+		margin-bottom: $border-width * 4;
+	}
+	.l-demo-head {
+		margin-bottom: 10%;
+	}
+	.l-github {
+  	padding: 4px 28px 4px 4px;
+		background-size: 26px;
+		background-repeat: no-repeat;
+		background-position: right center;
+		font-size: 0.75em;
+		font-style: normal;
+		text-decoration: none;
+  }
+  .l-github-wrap {
+  	text-align: right;
+		margin: 6px 0;
+  }
+}
+
+// @media (min-width: $mq-large-min) and (max-width: $mq-large-max) {
+//   .s-header {min-height: 400px;}
+//   .s-header h1 {max-width: $mq-medium-min;}
+// }
+
+// @media (min-width: $mq-xlarge-min) {
+//   .s-header {background-attachment: fixed;}
+//   .s-header h1 {max-width: $mq-medium-max; font-size: 4em;}
+// }
+
+// @media (min-width: $mq-xlarge-min) and (max-width: $mq-xxlarge-max) {
+//   .s-header {min-height: 500px;}
+// }
+
+// @media (min-width: $mq-xxlarge-max) {
+//   .s-header {min-height: 600px;}
+// }

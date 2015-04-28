@@ -1,0 +1,110 @@
+/**
+ * Remote Info
+ *
+ * all the styling for the remote info
+ * this the connector
+ */
+
+
+/* Variables ***********************************/
+
+@import '../variables/common';
+
+/* Styles **************************************/
+#remote-info {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 10;
+
+  &.ready {
+    height: $border-width/2; width: 100%;
+
+    animation: remoteInfoAnim 2s $transition-timing-function;
+    -webkit-animation: remoteInfoAnim 2s $transition-timing-function;
+  }
+}
+
+@keyframes remoteInfoAnim
+{
+  0% {
+    top: $border-width * 3; left: 50%;
+    width: 0; height: 0;
+    margin: 0;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  30% {
+    top: $border-width * 3; left: 50%;
+    width: $border-width * 2; height: $border-width * 2;
+    margin: -$border-width;
+    border-radius: 50%;
+  }
+  70% {
+    top: $border-width * 3; left: 50%;
+    width: $border-width * 2; height: $border-width * 2;
+    margin: -$border-width;
+    border-radius: 50%;
+  }
+  85% {
+    top: -$border-width * 2; left: 50%;
+    width: $border-width * 2; height: $border-width * 2;
+    margin: -$border-width;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  85.01% {
+    top: -$border-width/2; left: 0;
+    width: 100%; height: $border-width/2;
+    margin: 0;
+    border-radius: 0;
+    z-index: 10
+  }
+  100% {
+    top: 0; left: 0;
+    width: 100%; height: $border-width/2;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+@-webkit-keyframes remoteInfoAnim
+{
+  0% {
+    top: $border-width * 3; left: 50%;
+    width: 0; height: 0;
+    margin: 0;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  30% {
+    top: $border-width * 3; left: 50%;
+    width: $border-width * 2; height: $border-width * 2;
+    margin: -$border-width;
+    border-radius: 50%;
+  }
+  70% {
+    top: $border-width * 3; left: 50%;
+    width: $border-width * 2; height: $border-width * 2;
+    margin: -$border-width;
+    border-radius: 50%;
+  }
+  85% {
+    top: -$border-width * 2; left: 50%;
+    width: $border-width * 2; height: $border-width * 2;
+    margin: -$border-width;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  85.01% {
+    top: -$border-width/2; left: 0;
+    width: 100%; height: $border-width/2;
+    margin: 0;
+    border-radius: 0;
+    z-index: 10;
+  }
+  100% {
+    top: 0; left: 0;
+    width: 100%; height: $border-width/2;
+    margin: 0;
+    border-radius: 0;
+  }
+}
