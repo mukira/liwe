@@ -1,6 +1,8 @@
 ![Liwe logo](https://raw.github.com/liwe/liwe/master/client/source/assets/images/documentation_logo.png)
 ## an open source remote control
 
+[![Join the chat at https://gitter.im/liwe/liwe](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/liwe/liwe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Liwe is a service for web developers to use smartphones as a remote for their webapp. Built in JavaScript, a Node server and a JavaScript API.
 
 There's nothing new behind this idea, it exist from ages. But it's always a pain to implement, just for a simple controller. So the idea behind Liwe is giving the best for everybody.
