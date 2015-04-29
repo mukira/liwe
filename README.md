@@ -1,4 +1,4 @@
-![Liwe logo](https://raw.github.com/liwe/liwe/master/client/source/assets/images/documentation_plan.png)
+![Liwe logo](https://raw.github.com/liwe/liwe/master/client/source/assets/images/documentation_logo.png)
 ## an open source remote control
 
 Liwe is a service for web developers to use smartphones as a remote for their webapp. Built in JavaScript, a Node server and a JavaScript API.
